@@ -1,14 +1,23 @@
-// Create an element with React
-const parent = React.createElement(
-    "div", // Type of element
-    { id: "Parent" }, // Props
-    [React.createElement("h1", {}, "I am h1 tag"),
-    React.createElement("h2", {}, "I am h2 tag")
-    ] // Child element
-);
+import React from "react";
+import ReactDOM from "react-dom/client";
 
-// Initialize the root
-const root = ReactDOM.createRoot(document.getElementById("root"));
+//jsx react element
+const HeadingFunctionalComponent = ()=> (<h1 id="heading" className="headingclass">
+     This is heading   </h1>);
 
-// Render the parent element
-root.render(parent);
+const headingReactElement=<h1>Hello...</h1>;
+  
+
+//React Functional Component
+const HeadingComponent= ()=>{return(
+<div>
+    <HeadingFunctionalComponent/>
+    {headingReactElement}
+    <h2>this is sub heading</h2>
+</div>
+);}
+
+
+
+const root=ReactDOM.createRoot(document.getElementById("root"));
+root.render(<HeadingComponent/>);
